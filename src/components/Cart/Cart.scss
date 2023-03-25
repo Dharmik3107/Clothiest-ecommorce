@@ -1,0 +1,10 @@
+.cart-icon{
+    width: 25px;
+    height: 23px;
+    transition: 0.5s filter;
+
+    &:hover{
+        filter: brightness(0) saturate(100%) invert(46%) sepia(2%) saturate(89%) hue-rotate(314deg) brightness(100%) contrast(84%);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,33 @@
+.search-container{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+    .search-icon{
+        width: 18px;
+        height: 18px;
+        position: relative;
+        bottom: 5px;
+        left: 30px;
+        cursor: pointer;
+    }
+
+    .search-input{
+        width: 150px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        background: transparent;
+        text-indent: 40px;
+        padding-bottom: 5px;
+        line-height: 25px;
+        font-size: 18px;
+
+        &::placeholder{
+            font-size: 18px;
+            color: black;
+        }
+    }
+}
