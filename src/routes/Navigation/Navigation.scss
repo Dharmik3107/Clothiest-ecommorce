@@ -1,3 +1,4 @@
+
 .main-body{
     width: 100vw;
     height: fit-content;
@@ -11,22 +12,27 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 40px;
+        
+        .home-page-navigator{
+            text-decoration: none;
+            color: black;
 
-        .title-container h1{
-            font-size: 40px;
+            .title-container h1{
+                font-size: 40px;
 
-            &:hover{
-                cursor: pointer;
+                &:hover{
+                    cursor: pointer;
+                }
             }
-        }
 
-        .title-container h5{
-            font-size: 20px;
-            transition: 0.5s color;
+            .title-container h5{
+                font-size: 20px;
+                transition: 0.5s color;
 
-            &:hover{
-                cursor: pointer;
-                color:var(--hover-color)
+                &:hover{
+                    cursor: pointer;
+                    color: var(--hover-color);
+                }
             }
         }
 
