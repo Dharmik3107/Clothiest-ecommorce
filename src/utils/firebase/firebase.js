@@ -25,7 +25,7 @@ export const popupSignin = () => signInWithPopup(auth, provider);
 export const database = getFirestore();
 
 //Creating user document to store details in firebase datastore
-export const createUserDocument = async (userData) => {
+export const createUserDocument = async (userData, otherData = {}) => {
 	const userDocRef = doc(database, "users", userData.uid);
 	const userSnapshot = await getDoc(userDocRef);
 
@@ -38,6 +38,7 @@ export const createUserDocument = async (userData) => {
 				displayName,
 				email,
 				createdAt,
+				...otherData,
 			});
 		} catch (error) {
 			console.error("Error creating the user", error.message);
