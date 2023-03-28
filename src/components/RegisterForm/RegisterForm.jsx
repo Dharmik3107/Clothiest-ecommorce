@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../Button/Button";
 import InputField from "../InputField/InputField";
-import { createManualSigninUser, createUserDocument } from "../../utils/firebase/firebase";
-import { Link } from "react-router-dom";
+import { createManualSignupUser, createUserDocument } from "../../utils/firebase/firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/user";
 import "./RegisterForm.scss";
 
+//default values for input fields
 const defaultValue = {
 	displayName: "",
 	email: "",
@@ -15,27 +17,42 @@ const defaultValue = {
 const RegisterForm = () => {
 	const [formValue, setFormValues] = useState(defaultValue);
 	const { displayName, email, password, confirmPassword } = formValue;
+	const navigate = useNavigate();
+
+	//state handling
+	const { setCurrentUser } = useContext(UserContext);
+
+	//function to handle event of input field based on name
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormValues({ ...formValue, [name]: value });
 	};
 
+	//function to reset form input field
 	const resetFormField = () => {
 		setFormValues(defaultValue);
 	};
 
+	//function to pass values typed in form to firebase store to create user doc
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
+		//checking both password is same or not
 		if (password !== confirmPassword) {
 			alert("Passwords do not match");
 			return;
 		}
 
 		try {
-			const { user } = await createManualSigninUser(email, password);
-
+			//passing data to manual sign up function and creating document based on the response
+			const { user } = await createManualSignupUser(email, password);
+			setCurrentUser(user);
 			await createUserDocument(user, { displayName });
+
+			//if we get user object in response then redirect to login page
+			if (user) {
+				navigate("/login");
+			}
 			resetFormField();
 		} catch (error) {
 			if (error.code === "auth/email-already-in-use") {
@@ -52,7 +69,7 @@ const RegisterForm = () => {
 				<InputField type="text" name="displayName" id="username" label="Display Name" required={true} value={displayName} onChange={handleChange} />
 				<InputField type="email" name="email" id="email" label="Email Address" required={true} value={email} onChange={handleChange} />
 				<InputField type="password" name="password" id="password" label="Password" required={true} value={password} onChange={handleChange} />
-				<InputField type="password" name="confirmPassword" id="password" label="Confirm Password" required={true} value={confirmPassword} onChange={handleChange} />
+				<InputField type="password" name="confirmPassword" id="confirmPassword" label="Confirm Password" required={true} value={confirmPassword} onChange={handleChange} />
 				<div className="divider"></div>
 				<Button text="Register" buttonType="default" type="submit" />
 			</form>

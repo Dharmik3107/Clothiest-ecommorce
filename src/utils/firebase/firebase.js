@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Configuring firebase
@@ -49,7 +49,7 @@ export const createUserDocument = async (userData, otherData = {}) => {
 };
 
 //function to get user object for saving the user in firebase database with manual sign in using email and passsword
-export const createManualSigninUser = async (email, password) => {
+export const createManualSignupUser = async (email, password) => {
 	if (!email | !password) return;
 	return await createUserWithEmailAndPassword(auth, email, password);
 };
@@ -59,3 +59,6 @@ export const manualSignin = async () => {
 	if (!email | !password) return;
 	return await signInWithEmailAndPassword(auth, email, password);
 };
+
+//function to signout
+export const signOutUser = () => signOut();
