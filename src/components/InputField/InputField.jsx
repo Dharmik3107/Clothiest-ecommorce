@@ -2,7 +2,6 @@ import React from "react";
 import "./InputField.scss";
 
 const InputField = ({ label, ...otherProps }) => {
-	console.log(otherProps);
 	return (
 		<div className="input-container">
 			<input {...otherProps} className="input-field" />

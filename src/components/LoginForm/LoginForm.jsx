@@ -32,7 +32,7 @@ const LoginForm = () => {
 			</form>
 			<div className="register-redirect-container">
 				<p className="register-redirect-text">
-					Haven't registered yet? <Link to="register">Register here</Link>
+					Haven't registered yet? <Link to="/register">Register here</Link>
 				</p>
 			</div>
 		</div>
