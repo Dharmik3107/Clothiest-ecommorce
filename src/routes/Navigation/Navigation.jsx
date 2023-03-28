@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import Search from "./../../components/Search/Search";
 import LoginButton from "../../components/LoginButton/LoginButton";
 import Cart from "./../../components/Cart/Cart";
@@ -8,6 +8,10 @@ import "./Navigation.scss";
 import Footer from "./../../components/Footer/Footer";
 
 const Navigation = () => {
+	const { pathname } = useLocation();
+	const isLoginPage = pathname === "/login";
+	const isRegisterPage = pathname === "/register";
+
 	return (
 		<main className="main-body">
 			<nav className="navigation-container">
@@ -19,15 +23,15 @@ const Navigation = () => {
 				</Link>
 				<NavList />
 				<div className="utility-container">
-					<Search />
-					<LoginButton />
-					<Cart />
+					{!isLoginPage && !isRegisterPage && <Search />}
+					<LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />
+					{!isLoginPage && !isRegisterPage && <Cart />}
 				</div>
 			</nav>
 			<section className="content-section">
 				<Outlet />
 			</section>
-			<Footer />
+			{!isLoginPage && !isRegisterPage && <Footer />}
 		</main>
 	);
 };
