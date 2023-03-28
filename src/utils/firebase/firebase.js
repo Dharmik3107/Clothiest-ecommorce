@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Configuring firebase
@@ -13,7 +13,7 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 
-//Setting the provider to user google sign-in facility
+//Setting the provider to use google sign-in facility
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
 	prompt: "select_account",
@@ -21,9 +21,10 @@ provider.setCustomParameters({
 export const auth = getAuth();
 export const popupSignin = () => signInWithPopup(auth, provider);
 
-//Saving the user data if it is not exist or returning the data if it exists in database
+//Calling getFirestore function to work with firestore
 export const database = getFirestore();
 
+//Creating user document to store details in firebase datastore
 export const createUserDocument = async (userData) => {
 	const userDocRef = doc(database, "users", userData.uid);
 	const userSnapshot = await getDoc(userDocRef);
@@ -44,4 +45,16 @@ export const createUserDocument = async (userData) => {
 	}
 
 	return userDocRef;
+};
+
+//function to get user object for saving the user in firebase database with manual sign in using email and passsword
+export const createManualSigninUser = async (email, password) => {
+	if (!email | !password) return;
+	return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+//function to singin with stored email and password using above function
+export const manualSignin = async () => {
+	if (!email | !password) return;
+	return await signInWithEmailAndPassword(auth, email, password);
 };

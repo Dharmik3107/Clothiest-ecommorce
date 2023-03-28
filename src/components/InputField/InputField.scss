@@ -1,0 +1,53 @@
+@mixin shrink{
+    position: relative;
+    top: -5px;
+    left: 0px;
+    font-size: 15px;
+    color: black;
+}
+
+.input-container{
+    width: 500px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px auto;
+
+    .input-label{
+        position: relative;
+        left: 10px;
+        top: 35px;
+        font-size: 20px;
+        color: rgba($color: #000000, $alpha: 0.5);
+        order: 1;
+        transition: 300ms ease all;
+        z-index: 10;
+
+        &.shrink{
+            @include shrink();
+        }
+    }
+
+    .input-field{
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid black;
+        font-size: 20px;
+        order: 2;
+        text-indent: 10px;
+        z-index: 20;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:focus ~ .input-label{
+            @include shrink();
+        }
+    }
+}

@@ -1,5 +1,5 @@
 $color-white: white;
-$color-bg: rgb(46, 46, 46);
+$color-bg: rgb(27, 27, 27);
 $color-hover: #ccc;
 $font-size-heading: 30px;
 $font-size-body: 18px;
@@ -28,6 +28,8 @@ $btn-transition: 0.5s all;
 
       > p {
         font-size: $font-size-body;
+        line-height: 30px;
+        letter-spacing: 0.1em;
       }
     }
 

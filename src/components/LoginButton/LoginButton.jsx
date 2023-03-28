@@ -1,14 +1,15 @@
 import React from "react";
 import LoginIcon from "../../assets/LoginIcon.svg";
-import "./Login.scss";
+import "./LoginButton.scss";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const LoginButton = () => {
 	return (
-		<div className="login-container">
+		<Link to="login" className="login-container">
 			<img src={LoginIcon} alt="Login Icon" className="login-image" />
 			<button className="login-button">Log in</button>
-		</div>
+		</Link>
 	);
 };
 
-export default Login;
+export default LoginButton;

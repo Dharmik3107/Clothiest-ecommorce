@@ -6,6 +6,8 @@ import Contact from "./routes/Contact/Contact";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.scss";
+import Login from "./routes/Login/Login";
+import Register from "./routes/Register/Register";
 
 function App() {
 	return (
@@ -15,6 +17,8 @@ function App() {
 				<Route path="shop" element={<Shop />} />
 				<Route path="contact" element={<Contact />} />
 				<Route path="about" element={<About />} />
+				<Route path="login" element={<Login />} />
+				<Route path="register" element={<Register />} />
 			</Route>
 		</Routes>
 	);
