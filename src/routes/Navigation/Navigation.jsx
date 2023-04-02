@@ -10,7 +10,6 @@ import { UserContext } from "../../contexts/user";
 
 const Navigation = () => {
 	const { currentUser } = useContext(UserContext);
-	console.log(currentUser);
 
 	const { pathname } = useLocation();
 	const isLoginPage = pathname === "/login";
