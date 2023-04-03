@@ -7,14 +7,20 @@ $jacques-font:'Jacques Francois Shadow', cursive;
 $messiri-font:'El Messiri', sans-serif;
 $opensans-font:'Open Sans', sans-serif;
 
-.navlist-container{
-    display: none;
-    width: 500px;
-    height: 100%;
-    // display: flex;
-    justify-content: space-between;
+.sidelist-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: $color-him;
     gap: 50px;
+    z-index: 10;
 
     & a.active{
         text-shadow: none;
@@ -24,6 +30,7 @@ $opensans-font:'Open Sans', sans-serif;
         font-size: 25px;
         font-weight: 700;
         text-decoration: none;
+        color: black;
         transition: 0.5s text-shadow;
         text-shadow: $text-shadow;
         color: $color-her;
@@ -34,5 +41,5 @@ $opensans-font:'Open Sans', sans-serif;
     }
 }
 .hamburger-container{
-    z-index: 20;
+    
 }

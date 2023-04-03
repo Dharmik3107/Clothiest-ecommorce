@@ -2,16 +2,20 @@ import { createContext, useState, useEffect } from "react";
 import { getCategoryAndProducts } from "../utils/firebase/firebase";
 
 export const productContext = createContext({
-	productMap: [],
+	productMapMen: [],
+	productMapWomen: [],
 });
 
 export const productProvider = ({ children }) => {
-	const [productMap, setProductMap] = useState({});
+	const [productMapMen, setProductMapMen] = useState({});
+	const [productMapWomen, setProductMapWomen] = useState({});
 
 	useEffect(() => {
 		const getProductsMap = async () => {
-			const productsMap = await getCategoryAndProducts();
-			setProductMap(productsMap);
+			const menProducts = await getCategoryAndProducts("menCategories");
+			setProductMapMen(menProducts);
+			const womenProducts = await getCategoryAndProducts("menCategories");
+			setProductMapWomen(womenProducts);
 		};
 
 		getProductsMap();

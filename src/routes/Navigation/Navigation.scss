@@ -1,3 +1,15 @@
+// font-family: 'Jacques Francois Shadow', cursive;
+// font-family: 'El Messiri', sans-serif;
+
+$color-her:rgba(255,230,0,0.75);
+$color-him: rgba(0,255,194,1);
+$text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+$inset-shadow:inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+$jacques-font:'Jacques Francois Shadow', cursive;
+$messiri-font:'El Messiri', sans-serif;
+$opensans-font:'Open Sans', sans-serif;
+
 
 .main-body{
     width: 100vw;
@@ -11,37 +23,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0px 40px;
-        
+        padding: 0px 20px;
+
         .home-page-navigator{
             text-decoration: none;
-            color: black;
+            color: $color-him;
+            font-size: 30px;
+            text-shadow: $text-shadow;
+            transition: 0.5s text-shadow;
 
-            .title-container h1{
-                font-size: 40px;
-
-                &:hover{
-                    cursor: pointer;
-                }
-            }
-
-            .title-container h5{
-                font-size: 20px;
-                transition: 0.5s color;
-
-                &:hover{
-                    cursor: pointer;
-                    color: var(--hover-color);
-                }
+            &:hover{
+                text-shadow: none;
             }
         }
-
-        .utility-container{
-            width: 350px;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        
     }
 }

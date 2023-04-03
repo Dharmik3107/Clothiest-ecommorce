@@ -1,33 +1,20 @@
+$box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+$opensans-font:'Open Sans', sans-serif;
+
 .search-container{
+    // display: none;
     width: fit-content;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center ;
 
     .search-icon{
-        width: 18px;
-        height: 18px;
-        position: relative;
-        bottom: 5px;
-        left: 30px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
+        filter: brightness(0) saturate(100%) invert(83%) sepia(56%) saturate(1291%) hue-rotate(0deg) brightness(104%) contrast(105%);
+        box-shadow: $box-shadow;
     }
-
-    .search-input{
-        width: 150px;
-        border: none;
-        border-bottom: 1px solid black;
-        outline: none;
-        background: transparent;
-        text-indent: 40px;
-        padding-bottom: 5px;
-        line-height: 25px;
-        font-size: 18px;
-
-        &::placeholder{
-            font-size: 18px;
-            color: black;
-        }
-    }
+    
 }

@@ -5,14 +5,16 @@ import { imageArrayWomen, imageArrayMen } from "./../../assets/index";
 import Category from "../../components/Category/Category";
 import menCategories from "../../assets/Category/Men";
 import womenCategories from "../../assets/Category/Women";
+import Landing from "../../components/Landing/Landing";
 
 const Home = () => {
 	return (
 		<div className="home-container">
-			<ImageSliderComponent imageArray={imageArrayWomen} />
+			<Landing />
+			{/* <ImageSliderComponent imageArray={imageArrayWomen} />
 			<Category imageArray={womenCategories} title={"Her"} />
 			<ImageSliderComponent imageArray={imageArrayMen} />
-			<Category imageArray={menCategories} title={"Him"} />
+			<Category imageArray={menCategories} title={"Him"} /> */}
 		</div>
 	);
 };

@@ -21,15 +21,9 @@ const Navigation = () => {
 				<Link to="/" className="home-page-navigator">
 					<div className="title-container">
 						<h1>Clothiest</h1>
-						<h5>Premium Clothes</h5>
 					</div>
 				</Link>
 				<NavList />
-				<div className="utility-container">
-					{!isLoginPage && !isRegisterPage && <Search />}
-					<LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />
-					{!isLoginPage && !isRegisterPage && <Cart />}
-				</div>
 			</nav>
 			<section className="content-section">
 				<Outlet />

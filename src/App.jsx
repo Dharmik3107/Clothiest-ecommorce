@@ -1,6 +1,6 @@
 import Navigation from "./routes/Navigation/Navigation";
 import Home from "./routes/Home/Home";
-import Shop from "./routes/Shop/Shop";
+import Category from "./routes/Category/Category";
 import About from "./routes/About/About";
 import Contact from "./routes/Contact/Contact";
 import { Routes, Route } from "react-router-dom";
@@ -14,7 +14,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Navigation />}>
 				<Route index element={<Home />} />
-				<Route path="shop" element={<Shop />} />
+				<Route path="shop" element={<Category />} />
 				<Route path="contact" element={<Contact />} />
 				<Route path="about" element={<About />} />
 				<Route path="login" element={<Login />} />
