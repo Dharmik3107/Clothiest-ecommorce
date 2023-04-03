@@ -1,5 +1,9 @@
 // font-family: 'Jacques Francois Shadow', cursive;
 // font-family: 'El Messiri', sans-serif;
+@import "../../mixins.scss"; 
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
 
 $color-her:rgba(255,230,0,0.75);
 $color-him: rgba(0,255,194,1);
@@ -9,7 +13,6 @@ $inset-shadow:inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 $jacques-font:'Jacques Francois Shadow', cursive;
 $messiri-font:'El Messiri', sans-serif;
 $opensans-font:'Open Sans', sans-serif;
-
 
 .main-body{
     width: 100vw;
@@ -28,14 +31,23 @@ $opensans-font:'Open Sans', sans-serif;
         .home-page-navigator{
             text-decoration: none;
             color: $color-him;
-            font-size: 30px;
-            text-shadow: $text-shadow;
+            font-size: 20px;
+            // text-shadow: $text-shadow;
             transition: 0.5s text-shadow;
+            z-index: 10;
 
             &:hover{
                 text-shadow: none;
             }
+
+            @include md{
+                font-size: 35px;
+            }
         }
         
     }
+}
+.text-shadow{
+    text-shadow: $text-shadow;
+     
 }

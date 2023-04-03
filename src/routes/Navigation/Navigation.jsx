@@ -14,11 +14,12 @@ const Navigation = () => {
 	const { pathname } = useLocation();
 	const isLoginPage = pathname === "/login";
 	const isRegisterPage = pathname === "/register";
+	const isHomePage = pathname === "/";
 
 	return (
 		<main className="main-body">
 			<nav className="navigation-container">
-				<Link to="/" className="home-page-navigator">
+				<Link to="/" className={`home-page-navigator ${isHomePage ? "text-shadow" : ""}`}>
 					<div className="title-container">
 						<h1>Clothiest</h1>
 					</div>
@@ -28,7 +29,7 @@ const Navigation = () => {
 			<section className="content-section">
 				<Outlet />
 			</section>
-			{!isLoginPage && !isRegisterPage && <Footer />}
+			{/* {!isLoginPage && !isRegisterPage && <Footer />} */}
 		</main>
 	);
 };

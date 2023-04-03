@@ -18,13 +18,13 @@ const NavList = () => {
 		<>
 			<div className="navlist-container">
 				{!isLoginPage && !isRegisterPage && !isHomePage && <Search />}
-				<NavLink to="men" className="navitems">
+				<NavLink to="men" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Men
 				</NavLink>
-				<NavLink to="women" className="navitems">
+				<NavLink to="women" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Women
 				</NavLink>
-				<NavLink to="contact" className="navitems">
+				<NavLink to="contact" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Contact
 				</NavLink>
 				<LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />

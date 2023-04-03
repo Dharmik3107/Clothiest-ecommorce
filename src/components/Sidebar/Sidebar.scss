@@ -18,7 +18,7 @@ $opensans-font:'Open Sans', sans-serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $color-him;
+    background-color: white;
     gap: 50px;
     z-index: 10;
 
@@ -32,7 +32,7 @@ $opensans-font:'Open Sans', sans-serif;
         text-decoration: none;
         color: black;
         transition: 0.5s text-shadow;
-        text-shadow: $text-shadow;
+        // text-shadow: $text-shadow;
         color: $color-her;
 
         &:hover{
