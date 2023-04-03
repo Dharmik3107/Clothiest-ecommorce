@@ -1,10 +1,18 @@
+@import "../../mixins.scss"; 
+
 .login-form-container{
-    width: 700px;
-    height: 700px;
+    width: 95%;
+    height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(211.73deg, #00FFC2 -1.63%, rgba(255, 230, 0, 0.75) 100.99%);
+    border-radius: 50px;
+
+    @include md{
+        width: 750px;
+    }
 
     .form-heading{
         font-size: 40px;
@@ -12,6 +20,8 @@
     }
 
     .fomr-container{
+        width: 100%;
+        padding: 0px 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -31,6 +41,8 @@
     }
     
     .register-redirect-container{
+        width: 80%;
+        text-align: center;
         margin-top: 10px;
 
         .register-redirect-text a{
