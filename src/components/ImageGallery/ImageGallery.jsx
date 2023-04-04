@@ -5,6 +5,7 @@ import Dress from "../../assets/Category/Women/Dress.webp";
 import Jeans from "../../assets/Category/Men/Bottoms.webp";
 import TopWear from "../../assets/Category/Men/Top Wear.webp";
 import "./ImageGallery.scss";
+import ImageCard from "../ImageCard/ImageCard";
 
 const ImageGallery = () => {
 	return (
@@ -13,22 +14,10 @@ const ImageGallery = () => {
 				<img src={MainBanner} alt="Main Banner" />
 			</div>
 			<div className="sub-banner-container">
-				<div>
-					<img src={Traditionals} alt="Traditionals" />
-					<p>Traditionals</p>
-				</div>
-				<div>
-					<img src={Dress} alt="Dress" />
-					<p>Dresses</p>
-				</div>
-				<div>
-					<img src={Jeans} alt="Jeans" />
-					<p>Jeans</p>
-				</div>
-				<div>
-					<img src={TopWear} alt="Top Wear" />
-					<p>Top Wear</p>
-				</div>
+				<ImageCard cardType="default" text="Traditionals" image={Traditionals} isButton={false} />
+				<ImageCard cardType="default" text="Dresses" image={Dress} isButton={false} />
+				<ImageCard cardType="default" text="Jeans" image={Jeans} isButton={false} />
+				<ImageCard cardType="default" text="Top Wear" image={TopWear} isButton={false} />
 			</div>
 		</div>
 	);
