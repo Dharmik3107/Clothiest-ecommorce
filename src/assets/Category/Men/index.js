@@ -25,11 +25,11 @@ const menCategories = [
 		categoryTitle: "Trousers",
 		imageURL: trousers,
 	},
-	{
-		id: 5,
-		categoryTitle: "Bottoms",
-		imageURL: bottoms,
-	},
+	// {
+	// 	id: 5,
+	// 	categoryTitle: "Bottoms",
+	// 	imageURL: bottoms,
+	// },
 ];
 
 export default menCategories;

@@ -1,0 +1,27 @@
+.logo-container{
+    width: 100%;
+    max-width: 1500px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0px;
+    margin: 0px auto;
+
+   .logos{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+
+
+        img{
+            margin: 0px auto;
+            width: 300px;
+            height: 300px;
+        }
+   }
+}

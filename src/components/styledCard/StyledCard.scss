@@ -1,0 +1,35 @@
+@import "../../mixins.scss"; 
+
+$color-her:rgba(255,230,0,0.75);
+$color-him: rgba(0,255,194,1);
+$text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+$inset-shadow:inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+$jacques-font:'Jacques Francois Shadow', cursive;
+$messiri-font:'El Messiri', sans-serif;
+$opensans-font:'Open Sans', sans-serif;
+
+.styled-container{
+    width: 100%;
+    max-width: 500px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    img{
+        aspect-ratio: 0.7;
+        width: 95%;
+        max-width: 500px;
+        border: 10px solid transparent;
+        background: linear-gradient(211.73deg, #00FFC2 -1.63%, rgba(255, 230, 0, 0.75) 100.99%);
+        background-clip: border-box;
+    }
+
+    h1{
+        margin: 25px 0px;
+        font-size: 35px;
+    }
+}

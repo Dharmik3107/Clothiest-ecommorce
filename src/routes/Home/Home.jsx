@@ -7,14 +7,21 @@ import menCategories from "../../assets/Category/Men";
 import womenCategories from "../../assets/Category/Women";
 import Landing from "../../components/Landing/Landing";
 import ImageGallery from "../../components/ImageGallery/ImageGallery";
-import HerFeed from "../../components/HerFeed/HerFeed";
+import Feed from "../../components/Feed/Feed";
+import StyledCardContainer from "../../components/StyledCardContainer/StyledCardContainer";
+import LogosContainer from "../../components/LogosContainer/LogosContainer";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
 	return (
 		<div className="home-container">
 			<Landing />
 			<ImageGallery />
-			<HerFeed />
+			<Feed categories={womenCategories} />
+			<StyledCardContainer />
+			<Feed categories={menCategories} />
+			<LogosContainer />
+			<Footer />
 			{/* <ImageSliderComponent imageArray={imageArrayWomen} />
 			<Category imageArray={womenCategories} title={"Her"} />
 			<ImageSliderComponent imageArray={imageArrayMen} />

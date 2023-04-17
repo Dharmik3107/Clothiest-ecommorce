@@ -5,7 +5,7 @@ const InputField = ({ label, ...otherProps }) => {
 	return (
 		<div className="input-container">
 			<input {...otherProps} className="input-field" />
-			<label htmlFor="email" className={`${otherProps.value.length ? "shrink" : ""} input-label`}>
+			<label htmlFor={label} className={`${otherProps.value.length ? "shrink" : ""} input-label`}>
 				{label}
 			</label>
 		</div>
