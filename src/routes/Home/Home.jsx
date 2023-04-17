@@ -19,10 +19,10 @@ import "./Home.scss";
 const Home = () => {
 	return (
 		<div className="home-container">
-			<Landing /> {/* Done */}
-			<ImageGallery imageList={imageGalleryList} /> {/* Done */}
-			<Feed feedText="Her Feed" categories={womenCategories} /> {/* Done */}
-			<StyledCardContainer /> {/* Done */}
+			<Landing />
+			<ImageGallery imageList={imageGalleryList} />
+			<Feed feedText="Her Feed" categories={womenCategories} />
+			<StyledCardContainer />
 			<Feed feedText="His Feed" categories={menCategories} />
 			<LogosContainer />
 			<Footer />
