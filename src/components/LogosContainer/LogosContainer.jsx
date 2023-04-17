@@ -1,6 +1,10 @@
 import React from "react";
-import "./LogosContainer.scss";
+
+//Internal Imports  - Assets
 import { logoList } from "../../assets/Category/Logos";
+
+//Internal Imports - Components
+import "./LogosContainer.scss";
 
 const LogosContainer = () => {
 	return (

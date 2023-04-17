@@ -1,8 +1,14 @@
 import React from "react";
-import "./StyledCardContainer.scss";
+
+//Internal Imports - Assets
 import Stylish from "../../assets/Category/Stylish.webp";
 import Sold from "../../assets/Category/sold.webp";
+
+//Internal Imports - Components
 import StyledCard from "../styledCard/StyledCard";
+
+//Styling Imports
+import "./StyledCardContainer.scss";
 
 const StyledCardContainer = () => {
 	return (

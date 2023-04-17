@@ -1,8 +1,12 @@
 import React from "react";
-import "./Landing.scss";
 import { Link } from "react-router-dom";
+
+//Internal Imports
 import Left from "../../assets/Icons/Left.svg";
 import Right from "../../assets/Icons/Right.svg";
+
+//Styling Sheets Imports
+import "./Landing.scss";
 
 const Landing = () => {
 	return (
@@ -11,11 +15,7 @@ const Landing = () => {
 				<h1>SHOP</h1>
 				<h2>Her</h2>
 				<Link to="/women">
-					<button
-						onClick={() => {
-							console.log("clicked");
-						}}
-					>
+					<button>
 						<img src={Left} alt="Left-Arrow" />
 					</button>
 				</Link>

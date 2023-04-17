@@ -1,4 +1,6 @@
 import React from "react";
+
+//Styling Sheets Imports
 import "./ImageCard.scss";
 
 const CARD_CLASSES = {

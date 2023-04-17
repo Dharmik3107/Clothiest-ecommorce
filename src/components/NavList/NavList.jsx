@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import Search from "./../../components/Search/Search";
-import LoginButton from "../../components/LoginButton/LoginButton";
 import { Turn as Hamburger } from "hamburger-react";
 
-import "./NavList.scss";
+//Intenal Imports - Components
+import Search from "./../../components/Search/Search";
+import LoginButton from "../../components/LoginButton/LoginButton";
 import Sidebar from "../Sidebar/Sidebar";
+
+//Styling Sheets Imports
+import "./NavList.scss";
 
 const NavList = () => {
 	const [isOpen, setOpen] = useState(false);

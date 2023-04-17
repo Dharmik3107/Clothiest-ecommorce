@@ -1,9 +1,17 @@
 import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+//Internal Imports - Components
 import Button from "../Button/Button";
 import InputField from "../InputField/InputField";
+
+//Internal Imports - Third Party Lib - Firebase
 import { createManualSignupUser, createUserDocument } from "../../utils/firebase/firebase";
-import { Link, useNavigate } from "react-router-dom";
+
+//Internal Import - Contexts
 import { UserContext } from "../../contexts/user";
+
+//Styling Sheets Imports
 import "./RegisterForm.scss";
 
 //default values for input fields

@@ -1,6 +1,10 @@
 import React from "react";
-import "./StyledCard.scss";
+
+//Internal Imports  - Components
 import Button from "../Button/Button";
+
+//Styling Sheets Imports
+import "./StyledCard.scss";
 
 const StyledCard = ({ text, image }) => {
 	return (

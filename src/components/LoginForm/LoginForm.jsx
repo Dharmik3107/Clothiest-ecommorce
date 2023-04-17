@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+//Internal Imports - Components
 import Button from "../Button/Button";
 import InputField from "../InputField/InputField";
+
+//Internal Imports - Third Party Lib- Firebase
 import { popupSignin, createUserDocument, manualSignin } from "../../utils/firebase/firebase";
+
+//Styling Sheets Imports
 import "./LoginForm.scss";
 
-//form field default values
+//Form field default values
 const defaultFormValue = {
 	email: "",
 	password: "",
