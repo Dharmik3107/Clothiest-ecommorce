@@ -18,8 +18,8 @@
     }
 
     .navitems{
-        font-size: 25px;
-        font-weight: 700;
+        font-size: 22px;
+        font-weight: 400;
         text-decoration: none;
         transition: 0.5s text-shadow;
         color: $jet;
@@ -30,7 +30,19 @@
     }
 }
 .hamburger-container{
-    z-index: 20;
+    // z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .profile-button{
+        z-index: 20;
+    }
+
+    .hamburger-react{
+        z-index: 40;
+    }
 
     @include md{
         display: none;

@@ -6,6 +6,7 @@ import { Turn as Hamburger } from "hamburger-react";
 import Search from "./../../components/Search/Search";
 import LoginButton from "../../components/LoginButton/LoginButton";
 import Sidebar from "../Sidebar/Sidebar";
+import Profile from "../Profile/Profile";
 
 //Internal Imports - Contexts
 import { UserContext } from "../../contexts/user";
@@ -21,7 +22,6 @@ const NavList = () => {
 	const isHomePage = pathname === "/";
 
 	const { currentUser } = useContext(UserContext);
-	console.log(currentUser);
 	return (
 		<>
 			<div className="navlist-container">
@@ -34,9 +34,11 @@ const NavList = () => {
 				<NavLink to="contact" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Contact
 				</NavLink>
-				<LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />
+				{currentUser ? <Profile imageUrl={currentUser.photoURL} /> : <LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />}
+				{/* <LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} /> */}
 			</div>
 			<div className="hamburger-container">
+				{currentUser ? <Profile imageUrl={currentUser.photoURL} /> : ""}
 				<Hamburger color="#000" toggled={isOpen} toggle={setOpen} direction="left" label="show menu" duration={0.4} />
 			</div>
 			{isOpen && <Sidebar />}

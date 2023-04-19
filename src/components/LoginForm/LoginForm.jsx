@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 //Internal Imports - Components
@@ -43,6 +43,11 @@ const LoginForm = () => {
 		if (currentUser) navigate("/");
 	};
 
+	useEffect(() => {
+		if (currentUser) {
+			navigate("/");
+		}
+	}, [currentUser]);
 	//function to handle form for manaual signin
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -50,7 +55,6 @@ const LoginForm = () => {
 		try {
 			await manualSignin(email, password);
 			resetFormField();
-			navigate("/");
 		} catch (error) {
 			switch (error.code) {
 				case "auth/wrong-password":
@@ -74,7 +78,9 @@ const LoginForm = () => {
 				<div className="divider"></div>
 				<Button text="Sign in" buttonType="default" type="submit" />
 				<div className="horizontal-line"></div>
-				<Button text="Signin with Google" buttonType="google" type="button" onClick={signInWithGoogle} />
+				<Link to={currentUser ? "/" : ""}>
+					<Button text="Signin with Google" buttonType="google" type="button" onClick={signInWithGoogle} />
+				</Link>
 			</form>
 			<div className="register-redirect-container">
 				<p className="register-redirect-text">

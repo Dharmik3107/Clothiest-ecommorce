@@ -97,3 +97,5 @@ export const getCategoryAndProducts = async (catergoy) => {
 
 	return categoryMap;
 };
+
+export const photoURL = auth.currentUser?.photoURL;

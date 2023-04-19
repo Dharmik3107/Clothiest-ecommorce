@@ -1,0 +1,42 @@
+@import "../../mixins.scss";
+
+.submenu-container{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 150px;
+    height: 120px;
+    box-shadow: 0 0 0 0 #e6ebef, 0 6px 34px 0 rgba(0, 0, 0, 0.25);
+    background-color: white;
+    font-family: $opensans-font;
+    z-index: 40;
+
+    div{
+        width: 100%;
+        height: 40px;
+        background-color: transparent;
+        // border: 1px solid red;
+        outline: none;  
+        transition: 200ms all;
+        
+        &:hover{
+            background-color: rgba(211,211,211,0.3);
+            
+        }
+
+        button{
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(211, 211, 211,0.7) ;
+            font-size: 15px;
+            font-weight: 400;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-left:20px ;
+            cursor: pointer;
+        }
+    }
+}
