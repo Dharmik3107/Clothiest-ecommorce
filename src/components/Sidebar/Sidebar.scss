@@ -19,12 +19,15 @@
         text-shadow: none;
     }
 
-    .navitems{
+    .navitems,.logout-button{
         font-size: 25px;
         font-weight: 700;
         text-decoration: none;
         color: black;
         transition: 0.5s text-shadow;
+        background-color: transparent;
+        border: none;
+        outline: none;
         // text-shadow: $text-shadow;
         color: black;
 

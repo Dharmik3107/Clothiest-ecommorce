@@ -63,7 +63,7 @@ export const manualSignin = async () => {
 };
 
 //function to signout
-export const signOutUser = () => signOut();
+export const signOutUser = async () => await signOut(auth);
 
 //Authentication state change listener
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);

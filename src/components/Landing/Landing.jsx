@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//Internal Imports
+//Internal Imports - Assets
 import Left from "../../assets/Icons/Left.svg";
 import Right from "../../assets/Icons/Right.svg";
 

@@ -5,11 +5,15 @@
     top: 50px;
     right: 0px;
     width: 150px;
-    height: 120px;
+    height: 80px;
     box-shadow: 0 0 0 0 #e6ebef, 0 6px 34px 0 rgba(0, 0, 0, 0.25);
     background-color: white;
     font-family: $opensans-font;
     z-index: 40;
+
+    @include lg{
+        height: 120px;
+    }
 
     div{
         width: 100%;
@@ -37,6 +41,13 @@
             align-items: center;
             padding-left:20px ;
             cursor: pointer;
+        }
+    }
+    .logout-container{
+        display: none;
+
+        @include lg{
+            display: inline-block;
         }
     }
 }
