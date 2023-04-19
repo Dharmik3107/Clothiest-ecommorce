@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 //Internal Imports - Components
 import Button from "../Button/Button";
 import InputField from "../InputField/InputField";
 
 //Internal Imports - Third Party Lib- Firebase
-import { popupSignin, createUserDocument, manualSignin } from "../../utils/firebase/firebase";
+import { popupSignin, manualSignin } from "../../utils/firebase/firebase";
+
+//Internal Imports - Context
+import { UserContext } from "../../contexts/user";
 
 //Styling Sheets Imports
 import "./LoginForm.scss";
@@ -20,6 +23,8 @@ const defaultFormValue = {
 const LoginForm = () => {
 	const [formValues, setFormValues] = useState(defaultFormValue);
 	const { email, password } = formValues;
+	const navigate = useNavigate();
+	const { currentUser } = useContext(UserContext);
 
 	//function to handle change in every input field
 	const handleChange = (event) => {
@@ -29,13 +34,13 @@ const LoginForm = () => {
 
 	//function reset all input field
 	const resetFormField = () => {
-		setFormValues(defaultValue);
+		setFormValues(defaultFormValue);
 	};
 
 	//function to sign in with google
 	const signInWithGoogle = async () => {
-		const { user } = await popupSignin();
-		await createUserDocument(user);
+		await popupSignin();
+		if (currentUser) navigate("/");
 	};
 
 	//function to handle form for manaual signin
@@ -43,8 +48,9 @@ const LoginForm = () => {
 		event.preventDefault();
 
 		try {
-			const response = await manualSignin(email, password);
+			await manualSignin(email, password);
 			resetFormField();
+			navigate("/");
 		} catch (error) {
 			switch (error.code) {
 				case "auth/wrong-password":

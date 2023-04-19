@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Turn as Hamburger } from "hamburger-react";
 
@@ -6,6 +6,9 @@ import { Turn as Hamburger } from "hamburger-react";
 import Search from "./../../components/Search/Search";
 import LoginButton from "../../components/LoginButton/LoginButton";
 import Sidebar from "../Sidebar/Sidebar";
+
+//Internal Imports - Contexts
+import { UserContext } from "../../contexts/user";
 
 //Styling Sheets Imports
 import "./NavList.scss";
@@ -15,12 +18,13 @@ const NavList = () => {
 
 	const { pathname } = useLocation();
 	const isLoginPage = pathname === "/login";
-	const isRegisterPage = pathname === "/register";
 	const isHomePage = pathname === "/";
+
+	const { currentUser } = useContext(UserContext);
+	console.log(currentUser);
 	return (
 		<>
 			<div className="navlist-container">
-				{!isLoginPage && !isRegisterPage && !isHomePage && <Search />}
 				<NavLink to="men" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Men
 				</NavLink>
