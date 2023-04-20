@@ -7,12 +7,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
-  background-color: lightgrey;
+  background-color: rgb(238, 238, 238);
   min-height: 200px;
   font-family: $opensans-font;
   padding: 0px 10px;
   gap: 30px;
   padding: 20px 0px;
+  padding-left: 15px;
+  background: linear-gradient(211.73deg, #00FFC2 -1.63%, rgba(255, 0, 0, 0.75) 100.99%) no-repeat center center/cover;
 
 
   @include md{
@@ -55,6 +57,11 @@
       justify-content: center;
       align-items: start;
 
+      label{
+        padding-left: 10px;
+      }
+      
+
       sup{
         color: red;
       }
@@ -64,6 +71,7 @@
         outline: none;
         border-radius: 15px;
         text-indent: 15px;
+        margin-top: 5px;
       }
     }
 
