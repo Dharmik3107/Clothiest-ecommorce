@@ -31,9 +31,9 @@ const NavList = () => {
 				<NavLink to="women" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Women
 				</NavLink>
-				<NavLink to="contact" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
+				{/* <NavLink to="contact" className={`navitems ${isHomePage ? "text-shadow" : ""}`}>
 					Contact
-				</NavLink>
+				</NavLink> */}
 				{currentUser ? <Profile imageUrl={currentUser.photoURL} /> : <LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} />}
 				{/* <LoginButton text={isLoginPage ? "Register" : "Login"} path={isLoginPage ? "register" : "login"} /> */}
 			</div>

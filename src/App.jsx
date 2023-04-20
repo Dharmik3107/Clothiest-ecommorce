@@ -21,7 +21,7 @@ function App() {
 				{/* Done */}
 				<Route path="men" element={<Men />} />
 				<Route path="women" element={<Women />} />
-				<Route path="contact" element={<Contact />} />
+				{/* <Route path="contact" element={<Contact />} /> */}
 				<Route path="login" element={<Login />} />
 				{/* Done */}
 				<Route path="register" element={<Register />} />

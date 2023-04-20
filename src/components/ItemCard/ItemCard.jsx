@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 //Internal Imports - Assets
 import mainImage from "../../assets/Category/Men/1-1.webp";
 import Wishlist from "../../assets/Wishlist.svg";
 import Bag from "../../assets/Bag.svg";
 
+//Internal Imports - Context
+import { CartContext } from "./../../contexts/cart";
+
 //Styling Sheets Imports
 import "./ItemCard.scss";
-import { Link } from "react-router-dom";
 
 const CARD_STYLE = {
 	him: "rgba(0,255,194,0.7)",
@@ -15,6 +18,12 @@ const CARD_STYLE = {
 };
 
 const ItemCard = ({ product, style }) => {
+	const { cartItems, addItem } = useContext(CartContext);
+
+	const handleAddCart = () => {
+		addItem(product);
+	};
+
 	return (
 		<div className="item-card-container" style={{ border: `1px solid ${CARD_STYLE[style]}` }}>
 			<div className="main-image" style={{ backgroundImage: `url(https://${product.imageUrl})` }}></div>
@@ -26,7 +35,7 @@ const ItemCard = ({ product, style }) => {
 						<img src={Wishlist} alt="Wishlist" />
 					</button>
 					<button>
-						<img src={Bag} alt="Bag" />
+						<img src={Bag} alt="Bag" onClick={handleAddCart} />
 					</button>
 				</div>
 			</div>

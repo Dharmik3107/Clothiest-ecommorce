@@ -22,16 +22,19 @@
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5px;
         grid-row-gap: 5px;
+        margin: 0px auto;
 
-        @include md{
+        @include rwd(604){
             grid-template-columns: repeat(3, 1fr);
         }
 
-        @include lg{
+        @include rwd(900){
             grid-template-columns: repeat(4, 1fr);
         }
-
-        @include xl{
+        @include rwd(1275s){
+            grid-template-columns: repeat(5, 1fr);
+        }
+        @include rwd(1545){
             grid-template-columns: repeat(6, 1fr);
         }
     }

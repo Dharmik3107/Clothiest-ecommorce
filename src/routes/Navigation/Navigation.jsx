@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Search from "./../../components/Search/Search";
 import LoginButton from "../../components/LoginButton/LoginButton";
-import Cart from "./../../components/Cart/Cart";
 import NavList from "./../../components/NavList/NavList";
 import "./Navigation.scss";
 import Footer from "./../../components/Footer/Footer";

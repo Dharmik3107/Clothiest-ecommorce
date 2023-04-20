@@ -1,0 +1,12 @@
+@import "../../mixins.scss";
+
+.cart-footer{
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(211.73deg, #00FFC2 -1.63%, rgba(255, 0, 0, 0.75) 100.99%) no-repeat center center/cover;;
+    box-shadow: 0 0 0 0 #e6ebef, 0 6px 34px 0 rgba(0, 0, 0, 0.25);
+}
