@@ -38,6 +38,13 @@
             width: 200px;
             height: 1px;
         }
+        a{
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
     }
     
     .register-redirect-container{

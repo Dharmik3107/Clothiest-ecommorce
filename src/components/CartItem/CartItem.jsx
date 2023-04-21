@@ -23,19 +23,23 @@ const CartItem = ({ product }) => {
 	};
 	return (
 		<div className="cart-item-container">
-			<img src={`https://${product.imageUrl}`} alt={product.name} className="product-image-cart" />
-			<div className="name-price">
-				<h1>{product.name}</h1>
-				<p>{product.price.current.text}</p>
+			<div className="name-image-container">
+				<img src={`https://${product.imageUrl}`} alt={product.name} className="product-image-cart" />
+				<div className="name-price">
+					<h1>{product.name}</h1>
+					<p>{product.price.current.text}</p>
+				</div>
 			</div>
-			<div className="quantity">
-				<button onClick={handleDecreaseItem}>-</button>
-				<p>{product.quantity}</p>
-				<button onClick={handleIncreaseItem}>+</button>
+			<div className="cart-actions">
+				<div className="quantity">
+					<button onClick={handleDecreaseItem}>-</button>
+					<p>{product.quantity}</p>
+					<button onClick={handleIncreaseItem}>+</button>
+				</div>
+				<button className="delete" onClick={handleDeleteItem}>
+					Delete
+				</button>
 			</div>
-			<button className="delete" onClick={handleDeleteItem}>
-				<img src={Trash} alt="trash-icon" />
-			</button>
 		</div>
 	);
 };

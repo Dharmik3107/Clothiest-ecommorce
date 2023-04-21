@@ -3,7 +3,7 @@ import "./Submenu.scss";
 import { UserContext } from "./../../contexts/user";
 import { signOutUser } from "../../utils/firebase/firebase";
 
-const Submenu = ({ setCartOpen }) => {
+const Submenu = ({ setCartOpen, setWishlistOpen }) => {
 	const { currentUser, setCurrentUser } = useContext(UserContext);
 
 	const handleLogout = () => {
@@ -14,13 +14,17 @@ const Submenu = ({ setCartOpen }) => {
 	const handleCartClick = () => {
 		setCartOpen(true);
 	};
+
+	const handleWishlistClick = () => {
+		setWishlistOpen(true);
+	};
 	return (
 		<div className="submenu-container">
 			<div>
 				<button onClick={handleCartClick}>Your Cart</button>
 			</div>
 			<div>
-				<button>Your Wishlist</button>
+				<button onClick={handleWishlistClick}>Your Wishlist</button>
 			</div>
 			<div className="logout-container">
 				<button onClick={handleLogout}>Logout</button>

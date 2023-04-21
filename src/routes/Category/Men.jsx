@@ -7,6 +7,7 @@ import FilterMenu from "../../components/FilterMenu/FilterMenu";
 
 //Internal Imports - Contexts
 import { ProductContext } from "../../contexts/product";
+import { WishlistContext } from "../../contexts/wishlist";
 
 //Styling Sheets Imports
 import "./Category.scss";
@@ -51,7 +52,7 @@ const Men = () => {
 			</div>
 			<div className="item-list">
 				{products.map((product, index) => {
-					return <ItemCard key={index} style="him" product={product} />;
+					return <ItemCard key={index} style="him" product={product} isItemAddedToWishList={false} />;
 				})}
 			</div>
 		</section>
